@@ -96,8 +96,8 @@ public class Profile {
 		System.out.println("1) Change first name" 
 						+ "\n2) Change last name" 
 						+ "\n3) Change Status" 
-						+ "\n4) Change Image");
-		
+						+ "\n4) Change Image"
+						+ "\n5) Back to profile");
 		option = input.nextLine();
 		
 		switch (option) {
@@ -124,6 +124,8 @@ public class Profile {
 			System.out.println("Enter your new status!");
 			changedVariable = input.nextLine();
 			currentPerson.setImage(changedVariable);
+			break;
+		case "5":
 			break;
 		default:
 			break;
@@ -213,7 +215,7 @@ public class Profile {
 		System.out.println("\nEnter the name of the person you are looking for");
 		searchedName = input.next();
 		
-		// some crazy java 8 shit to find users posible placeholder till i find a way to use equals/contains.
+		// some crazy java 8 shit to find users posible placeholder till i adapt equals/contains.
 		List<Person> foundUsers = users.stream().filter((Person)->Person.getFirstName() 
 						.equalsIgnoreCase(searchedName)).collect(Collectors.toList());
 		
